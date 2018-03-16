@@ -30,20 +30,43 @@ public class Controller {
 
     // logical layer handle all the email sending
     @Autowired
-    EmailService mailgunService = new MailGunService();
-    @Autowired
-    EmailService sendGridService = new SendGridService();
-
+    EmailService emailService = new EmailServiceImp();
 
     /*
     sample post input
     {
-    ""
-
+    "to" : ["shiyun.zhangsyz@gmail.com", "yun553966858@gmail.com"],
+    "CC" : ["yun553966858@gmail.com"],
+    "BCC": ["shiyun.zhangsyz@gmail.com"],
+    "subject" : "how are you",
+    "text" : "long time no see, how are you"
     }
      */
     @PostMapping("/send")
     public ResponseMessage Send(@RequestBody Email email) {
-        return new ResponseMessage();
+
+//        System.out.println("To");
+//        for(String e : email.getTo()){
+//            System.out.println(e);
+//        }
+//        System.out.println();
+//
+//        System.out.println("CC");
+//        for(String e : email.getCc()){
+//            System.out.println(e);
+//        }
+//        System.out.println();
+//
+//        System.out.println("BCC");
+//        for(String e : email.getBcc()){
+//            System.out.println(e);
+//        }
+//        System.out.println();
+//
+//        System.out.println("Subject : " + email.getSubject());
+//        System.out.println("Text : " + email.getText());
+
+
+        return emailService.sendEmail(email);
     }
 }

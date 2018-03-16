@@ -2,20 +2,13 @@ package APIModel;
 
 import java.util.ArrayList;
 
+
 public class Email {
     private ArrayList<String> to;
-    private ArrayList<String> CC;
-    private ArrayList<String> BCC;
+    private ArrayList<String> cc;
+    private ArrayList<String> bcc;
     private String subject;
     private String text;
-
-    public Email(ArrayList<String> to, ArrayList<String> CC, ArrayList<String> BCC, String subject, String text){
-        this.to = to;
-        this.CC = CC;
-        this.BCC = BCC;
-        this.subject = subject;
-        this.text = text;
-    }
 
     public ArrayList<String> getTo() {
         return to;
@@ -25,20 +18,20 @@ public class Email {
         this.to = to;
     }
 
-    public ArrayList<String> getCC() {
-        return CC;
+    public ArrayList<String> getCc() {
+        return cc;
     }
 
-    public void setCC(ArrayList<String> CC) {
-        this.CC = CC;
+    public void setCc(ArrayList<String> cc) {
+        this.cc = cc;
     }
 
-    public ArrayList<String> getBCC() {
-        return BCC;
+    public ArrayList<String> getBcc() {
+        return bcc;
     }
 
-    public void setBCC(ArrayList<String> BCC) {
-        this.BCC = BCC;
+    public void setBcc(ArrayList<String> bcc) {
+        this.bcc = bcc;
     }
 
     public String getSubject() {
