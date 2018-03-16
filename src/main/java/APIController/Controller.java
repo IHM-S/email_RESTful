@@ -1,6 +1,10 @@
 package APIController;
 
-import org.springframework.web.bind.annotation.RestController;
+import APIModel.Email;
+import APIModel.ResponseMessage;
+import Service.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 
 /*
@@ -24,6 +28,12 @@ Please deply your solution somewhere(URL) for us to play with it
 @RestController
 public class Controller {
 
+    // logical layer handle all the email sending
+    @Autowired
+    EmailService mailgunService = new MailGunService();
+    @Autowired
+    EmailService sendGridService = new SendGridService();
+
 
     /*
     sample post input
@@ -32,6 +42,8 @@ public class Controller {
 
     }
      */
-//    @PostMapping("/send")
-//    public
+    @PostMapping("/send")
+    public ResponseMessage Send(@RequestBody Email email) {
+        return new ResponseMessage();
+    }
 }
