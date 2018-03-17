@@ -1,9 +1,0 @@
-/home/shiyun/github/email_RESTful/email_RESTful/src/main/java/APIModel/ResponseMessage.java
-/home/shiyun/github/email_RESTful/email_RESTful/src/main/java/Service/SendGridAPICaller.java
-/home/shiyun/github/email_RESTful/email_RESTful/src/main/java/Service/EmailService.java
-/home/shiyun/github/email_RESTful/email_RESTful/src/main/java/Constant/Constants.java
-/home/shiyun/github/email_RESTful/email_RESTful/src/main/java/APIController/Controller.java
-/home/shiyun/github/email_RESTful/email_RESTful/src/main/java/Service/MailGunAPICaller.java
-/home/shiyun/github/email_RESTful/email_RESTful/src/main/java/APIController/Application.java
-/home/shiyun/github/email_RESTful/email_RESTful/src/main/java/APIModel/Email.java
-/home/shiyun/github/email_RESTful/email_RESTful/src/main/java/Service/EmailServiceImp.java

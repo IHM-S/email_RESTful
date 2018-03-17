@@ -13,7 +13,7 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
 
-@Component("APICaller")
+@Component("SendGridAPICaller")
 public class SendGridAPICaller implements  APICaller {
 
     /**

@@ -11,7 +11,7 @@ import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
-@Component("APICaller")
+@Component("MailGunAPICaller")
 public class MailGunAPICaller implements APICaller {
 
     /**
