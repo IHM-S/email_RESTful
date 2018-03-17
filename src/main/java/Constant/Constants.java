@@ -1,3 +1,5 @@
+// class that contain all the constants I used in the project
+
 package Constant;
 
 public class Constants {

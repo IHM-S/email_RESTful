@@ -3,8 +3,6 @@ package Service;
 import APIModel.Email;
 import APIModel.ResponseMessage;
 import Constant.Constants;
-import com.fasterxml.jackson.annotation.JsonAlias;
-import org.apache.tomcat.util.bcel.Const;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
@@ -14,12 +12,16 @@ import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
-import javax.validation.constraints.Null;
 
-@Component
-public class SendGridAPICaller {
+@Component("APICaller")
+public class SendGridAPICaller implements  APICaller {
 
-
+    /**
+     * use sendgrid web api to send message according to the information provided by user
+     * @param email, contain all necessary information about the email user want to send
+     * @return ResponseMessage indicates if the message is successfully sent by sendgrid
+     */
+    @Override
     public ResponseMessage sendEmail(Email email) {
         // construct the json request
         JSONArray to = new JSONArray();
@@ -57,16 +59,15 @@ public class SendGridAPICaller {
                     .header("content-type", "application/json")
                     .body(jsonRequest.toString())
                     .asJson();
-            if(response.getStatus() == 202){
+            if(response.getStatus() == 202){ // indicate the server accepted the request
                 return new ResponseMessage(true, "Your emails have been sent successfully through sendgrid.");
             } else {
                 return new ResponseMessage(false, "Your emails have not been sent successfully through sendgrid.");
             }
         } catch (UnirestException e) {
             e.printStackTrace();
-            return new ResponseMessage(false, "While constructing HTTP request something went wrong");
+            return new ResponseMessage(false, "While constructing HTTP request for sendgrid something went wrong");
         }
-
 
     }
 }

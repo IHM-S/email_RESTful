@@ -11,8 +11,15 @@ import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
-@Component
-public class MailGunAPICaller {
+@Component("APICaller")
+public class MailGunAPICaller implements APICaller {
+
+    /**
+     * use mailgun web api to send message according to the information provided by user
+     * @param email, email object contain all necessary information provided from user
+     * @return ResponseMessage indicates if the message is successfully sent by mailgun
+     */
+    @Override
     public ResponseMessage sendEmail(Email email) {
         HttpRequestWithBody temp = Unirest.post("https://api.mailgun.net/v3/" + Constants.DOMIAN_NAME + "/messages")
                 .basicAuth("api", Constants.MAILGUN_API_KEY)
@@ -38,7 +45,7 @@ public class MailGunAPICaller {
             }
         } catch (UnirestException e) {
             e.printStackTrace();
-            return new ResponseMessage(false, "While constructing HTTP request something went wrong");
+            return new ResponseMessage(false, "While constructing HTTP request for mailgun something went wrong");
         }
 
     }
