@@ -6,7 +6,7 @@
 * [RESTful URL](#restful-url)
 * [Responses](#responses)
 * [Error Handling](#error-handling)
-* [Request & Response Examples](#request-&-response-examples)
+* [Request & Response Examples](#request--response-examples)
 
 ## Guidelines
 
