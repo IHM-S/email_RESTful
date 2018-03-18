@@ -6,7 +6,7 @@
 * [RESTful URL](#restful-url)
 * [Responses](#responses)
 * [Error Handling](#error-handling)
-* [Request & Response Examples](#resquest-&-response-examples)
+* [Request & Response Examples](#request-&-response-examples)
 
 ## Guidelines
 
@@ -20,7 +20,8 @@ if one of the services goes down, your service can quickly failover to a differe
 * No 3rd party client library are used to integrate with MailGun or SendGrid (email service providers).
 * Because I am using mailgun free account, therefore I can only send email to those people are in my verified users list. But there is no limitation for sendgrid.
 * By default the API uses mailgun, if mailgun fail, it will try to send email by sendgrid.
-## Proejct Structure
+
+## Project Structure
 * Project used Spring boot to help setup the project and it uses Spring REST structure.
 * Controller class is used to handle API request and dispatch request to correspond service.
 * Email and ResponseMessage classes are used to serve the purpose of data transfer object between different function calls and they are also used as return objects so Spring will receive the return object and return a corresponded JSON object to user.
