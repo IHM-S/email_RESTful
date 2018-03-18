@@ -3,6 +3,7 @@
 * [Guidelines](#guidelines)
 * [Features & Limitations](#features--limitations)
 * [Project Structure](#project-structure)
+* [Build Project](#build-project)
 * [RESTful URL](#restful-url)
 * [Responses](#responses)
 * [Error Handling](#error-handling)
@@ -29,6 +30,19 @@ if one of the services goes down, your service can quickly failover to a differe
 * EmailServiceImp is the implementation of EmailService, it is the project's service layer, it gets the request from user and does the service it provides and also it does the error checking of user input.
 * MailGunAPICaller and SendGridAPICaller are the implementation of APICaller, they are helper class for the EmailService, they actually connect with corresponded email service provider and try send email through them.
 * Constant is the class stores all the constants used in the projects, such as API key, from email address, from user name, etc.
+
+## Build Project
+I used maven to manage the decencies and it can also be used to generate the jar file. I used Intellij to help me manage the project and tested the project with the IDE.
+Steps to build the project:
+1. Use eclipse or Intellij to import the maven project.
+2. If necessary, modify the configuration of the project, select build with Spring boot and the main class is the Application class under APIController.
+3. Then the project can be run locally.
+
+I deployed the project on AWS EC2 and here were the steps:
+1. Create jar file of the project by in Intellij. (Open project structure -> artifacts -> add -> choose main class and manifest file -> run the project, jar file will be automatically generated and save in the specified folder)
+2. Create a instance of AWS EC2.
+3. Run command "java -jar app.jar".
+4. Open 8080 port for outside the world.
 
 ## RESTful URL
 This API only provide one API call:
