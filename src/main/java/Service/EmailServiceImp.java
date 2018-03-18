@@ -56,12 +56,12 @@ public class EmailServiceImp implements EmailService {
 
         // to, cc, bcc length no bigger than 1000 (sendgrid requires)
         if(email.getTo().size() > 1000 || (email.getCc() != null && email.getCc().size() > 1000) || (email.getBcc() != null && email.getBcc().size() > 1000)){
-            return new ResponseMessage(false, "Invalid input email, for either to, cc and bcc you can't have number of recipients larger than 1000");
+            return new ResponseMessage(false, "Invalid input email, for either to, cc and bcc you can't have number of recipients larger than 1000.");
         }
 
         // don't have to have subject but has to have text for mailgun, but have to have both subject and text for sendgrid
         if(email.getText() == null || email.getText().equals("")){
-            return new ResponseMessage(false, "Invalid input email, you must have a valid email text message defined");
+            return new ResponseMessage(false, "Invalid input email, you must have a valid email text message defined.");
         } else if (email.getSubject() == null || email.getSubject().equals("")) {
             return new ResponseMessage(false, "Invalid input email, you must have a valid email subject defined.");
         }
