@@ -1,7 +1,7 @@
 # email RESTful
 
 * [Guidelines](#guidelines)
-* [Features & Limitations](#features-&-limitations)
+* [Features & Limitations](#features--limitations)
 * [Project Structure](#project-structure)
 * [RESTful URL](#restful-url)
 * [Responses](#responses)
