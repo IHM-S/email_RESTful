@@ -15,7 +15,7 @@ public class ResponseMessage {
 
     public ResponseMessage(ResponseMessage msg1, ResponseMessage msg2){
         this.succeed = msg1.getSucceed() || msg2.getSucceed();
-        this.message = msg1.getMessage() + " " + msg2.message;
+        this.message = msg1.getMessage() + ", " + msg2.message;
     }
 
     public Boolean getSucceed() {

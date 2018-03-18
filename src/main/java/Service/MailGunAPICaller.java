@@ -24,15 +24,13 @@ public class MailGunAPICaller implements APICaller {
         HttpRequestWithBody temp = Unirest.post("https://api.mailgun.net/v3/" + Constants.DOMIAN_NAME + "/messages")
                 .basicAuth("api", Constants.MAILGUN_API_KEY)
                 .queryString("from", Constants.FROM_EMAIL);
-        for(String toEmail : email.getTo()){
-            temp.queryString("to", toEmail);
-        }
-        for(String CCEmail : email.getCc()){
-            temp.queryString("cc", CCEmail);
-        }
-        for(String BCCEmail : email.getBcc()){
-            temp.queryString("bcc", BCCEmail);
-        }
+        for(String toEmail : email.getTo()) temp.queryString("to", toEmail);
+        if(email.getCc() != null)
+            for(String CCEmail : email.getCc())
+                temp.queryString("cc", CCEmail);
+        if(email.getBcc() != null)
+            for(String BCCEmail : email.getBcc())
+                temp.queryString("bcc", BCCEmail);
         temp.queryString("subject", email.getSubject());
         temp.queryString("text", email.getText());
 

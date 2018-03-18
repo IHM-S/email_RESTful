@@ -6,5 +6,5 @@ import APIModel.Email;
 import APIModel.ResponseMessage;
 
 public interface APICaller {
-    public ResponseMessage sendEmail(Email email);
+    ResponseMessage sendEmail(Email email);
 }
